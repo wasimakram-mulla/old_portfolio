@@ -1,0 +1,133 @@
+<div class="container">
+	<div class="col-md-12 col-xs-12 col-lg-12">
+		 <h3 class="text-danger">PROJECTS</h3><em>"There is no substitute for hard work." -- Thomas A. Edison.<br/>"Quality is not an act. It is a habit." -- Aristotle</em>
+	<hr class="hr" />
+	<div id="totProjects">Total Projects: <strong><span class="text-info">{{PrjCtrl.projectsDets.length}}</span></strong></div><br/>
+	</div>
+
+	<div class="col-md-12 text-primary" ng-if="PrjCtrl.loader"><h3><img src="./img/squares.gif" height="30" width="30"/> Please wait... loading projects</h3></div>
+	
+	<div class="col-md-6 col-xs-12 col-lg-6 flip-container" ng-repeat="projs in PrjCtrl.projectsDets" ng-show="!PrjCtrl.loader">
+		<div class="project f1_container">
+			<span class="icon" title="Click me for more Info.">
+				<span class="glyphicon glyphicon-info-sign"><br/>info</span>
+			</span>
+			<a class="f1_card" ng-href="{{projs.project_link}}" target="_blank">
+				<div class="front face">
+					<img ng-src="{{projs.project_img}}" class="featurette-image img-responsive" alt="500x300">
+				</div>
+				<div class="back face">
+					<div class="overlay">
+						<div class="text-data">
+							<h3>{{projs.project_name}}</h3>
+							<h4>
+								<div class="languagesUsed"><span>Languages Used:</span>
+									<label ng-repeat="lang in projs.project_langs" class="label {{lang.label_type}}">{{lang.lang_name}}</label>
+								</div><br/>
+							<span ng-bind-html="projs.project_details"></span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div> <!-- Angular Blog Project Finish -->
+	
+</div> <!-- Container Wrapper Finish -->
+
+<div class="container popContainer">
+	<div class="col-lg-12 popupWrapper">
+		<div id="popupHeader" class="alert alert-success popupHeader">
+			<strong>Information</strong>
+			<span id="btn-close-popup" class="badge btn-danger">X</span>
+		</div>
+		<div class="alert alert-warning popupContent" role="alert">Content</div>
+	</div>
+</div>
+<script src="js/Controllers/projects.js"></script>
+
+<!-- Extra removed containers (DNS down) -->
+<!-- <div class="col-md-6 col-xs-12 col-lg-6 flip-container">
+	<div class="project f1_container">
+		<span class="icon" title="Click me for more Info.">
+			<span class="glyphicon glyphicon-info-sign"></span>
+		</span>
+		<a class="f1_card" href="projects/parallax/index.html" target="_blank">
+			<div class="front face">
+				<img src="img/projects/parallax.jpg" class="featurette-image img-responsive" alt="500x300">
+			</div>
+			<div class="back face">
+				<div class="overlay">
+					<div class="text-data">
+						<h3>Parallax Demo</h3>
+						<h4>A Self made dummy parallax demo.</h4>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div> -->
+
+<!-- <div class="col-md-6 col-xs-12 col-lg-6 flip-container">
+	<div class="project f1_container">
+		<span class="icon" title="Click me for more Info.">
+			<span class="glyphicon glyphicon-info-sign"></span>
+		</span>
+		<!-- <a class="f1_card" href="http://www.knowledgekeen.in/tutorial/html5/index.php" target="_blank"> 
+		<a class="f1_card" href="javascript:alert('GIT cannot load PHP sites!!! \n\n Please fork my Portfolio on github.')" target="_blank">
+			<div class="front face">
+				<img src="img/projects/kktutorial.jpg" class="featurette-image img-responsive" alt="500x300">
+			</div>
+			<div class="back face">
+				<div class="overlay">
+					<div class="text-data">
+						<h3>HTML5 Tutorial Site</h3>
+						<h4>In this site you will observe all the latest and important points of HTML5 and also some examples created by ME.Please go ahead and read.</h4>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div> -->
+
+<!-- <div class="col-md-6 col-xs-12 col-lg-6 flip-container">
+	<div class="project f1_container">
+		<span class="icon" title="Click me for more Info.">
+			<span class="glyphicon glyphicon-info-sign"></span>
+		</span>
+		<a class="f1_card" href="http://www.knowledgekeen.in" target="_blank">
+			<div class="front face">
+				<img src="img/projects/knowledgekeen.jpg" class="featurette-image img-responsive" alt="500x300">
+			</div>
+			<div class="back face">
+				<div class="overlay">
+					<div class="text-data">
+						<h3>Knowledge Keen Site</h3>
+						<h4>This site is designed and developed by Me.</h4>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div> -->
+
+<!-- <div class="col-md-6 col-xs-12 col-lg-6 flip-container">
+	<div class="project f1_container">
+		<span class="icon" title="Click me for more Info.">
+			<span class="glyphicon glyphicon-info-sign"></span>
+		</span>
+		<a class="f1_card" href="http://www.blog.knowledgekeen.in" target="_blank">
+			<div class="front face">
+				<img src="img/projects/kkblog.jpg" class="featurette-image img-responsive" alt="500x300">
+			</div>
+			<div class="back face">
+				<div class="overlay">
+					<div class="text-data">
+						<h3>Knowledge Keen Blog</h3>
+						<h4>My Blog for those who keen for knowledge.</h4>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div> -->
